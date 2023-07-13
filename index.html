@@ -4,16 +4,16 @@
 
 <html>
 <head>
-  <title>Div Screenshot</title>
+  <title>Receipt</title>
   <link rel="stylesheet" href="styles.css">
   <style>
 
   </style>
 </head>
 <body>
-  <div id="myDiv">
+  <div id="container">
 
-    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="50%" viewBox="0 0 2940.000000 833.000000"
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="60%" viewBox="0 0 2940.000000 833.000000"
     preserveAspectRatio="xMidYMid meet">
     <g transform="translate(0.000000,833.000000) scale(0.100000,-0.100000)"
     fill="#000000" stroke="none">
@@ -116,13 +116,19 @@
     </svg>
 
     <br>
-    <div id="exRate-div">
+    <div id="exchangeRateContainer" class="roundedBox">
         
-        <input id="exRate" type="text" placeholder="-,---.--">
-        <label for="exRate">:نرخ لیر به ریال</label>
+      <span id="exchangeRate" contentEditable="true" placeholder="-,---.--"></span>
+      <label for="exchangeRate" id="exchangeRateLabel">:نرخ لیر به ریال</label>
     </div>
 
-    <table id="myTable">
+    <div id="exchangeRateWithCommisionContainer" class="roundedBox">
+      <span id="exchangeRateWithCommisionCalculations" placeholder="-,---.-- + 10% = "></span>
+      <span id="exchangeRateWithCommision" placeholder="-,---.--"></span>
+      <label for="exchangeRateWithCommision" id="exchangeRateWithCommisionLabel">:نرخ با کمیسیون</label>
+    </div>
+
+    <table id="table">
       <thead>
         <tr>
           <th>کد کالا</th>
@@ -133,12 +139,35 @@
       </thead>
       <tbody>
         <!-- Table rows will be dynamically added here -->
+        <!-- <tr>
+          <td contenteditable="true">#xxxxxx</td>
+          <td contenteditable="true">--,---,---.--  TL</td>
+          <td>--,---,---.--  Rial</td>
+        </tr> -->
       </tbody>
     </table>
+    <div id="deliveryFeeContainer" class="roundedBox">
+        
+      <span id="deliveryFee" contentEditable="true" placeholder="00.00"></span>
+      <label for="deliveryFee" id="deliveryFeeLabel">:هزینه ارسال کالا</label>
+    </div>
+
+    <div id="totalContainer" class="roundedBox">
+      <span id="totalValue" placeholder="00.00" ></span>
+      <label for="totalValue" id="totalLabel">:مجموع</label>
+    </div>
+    
+    <div id="purchaseCodeContainer" class="roundedBox">
+      <span id="purchaseCode" contentEditable="true" placeholder="#XXXXXX" ></span>
+      <label for="purchaseCode" id="purchaseCodeLabel">:کد خرید</label>
+    </div>
+
+    <p id="thanks"> مرسی از اعتمادتون به بوتیکِ امپریال <br> ♥</p>
+
   </div>
-  <button id="downloadBtn" class="button">⬇<br/><b>_</b> </button>
-  <button id="addRowButton" class="button" onclick="addRow()">+</button>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/1.5.3/canvg.min.js"></script>
+  <button id="downloadButton" class="button">⬇<br/><b>_</b> </button>
+  <button id="addRowButton" class="button" >+</button>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/1.5.3/canvg.min.js"></script> -->
 
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <script src="script.js"></script>
